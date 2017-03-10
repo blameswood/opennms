@@ -38,8 +38,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.apache.commons.io.FileUtils;
-import org.exolab.castor.util.LocalConfiguration;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -387,13 +385,6 @@ public class WillItUnmarshalIT {
         this.clazz = clazz;
         this.impl = impl;
         this.exception = exception;
-    }
-
-    @Before
-    public void setUp() throws Exception {
-        // Reload castor properties every time
-        LocalConfiguration.getInstance().getProperties().clear();
-        LocalConfiguration.getInstance().getProperties().load(ConfigurationTestUtils.getInputStreamForResource(this, "/castor.properties"));
     }
 
     @Test
